@@ -1,0 +1,23 @@
+Setting up Database
+    x- require mongoose
+    x- setup schema
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  - install webpack
+    - npm install webpack --save-dev
+    - npm install webpack-cli --save-dev
+
+    - bundle.js
