@@ -2,13 +2,15 @@
 
 
 > Project description
+A component app that displays scrollable and clickable photos for users. 
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/wonder4-com/
+  - https://github.com/wonder4-com/
+  - https://github.com/wonder4-com/
+  - https://github.com/wonder4-com/
+  
 
 ## Table of Contents
 
@@ -19,6 +21,7 @@
 ## Usage
 
 > Some usage instructions
+
 
 ## Requirements
 
@@ -36,5 +39,8 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
+React
+express
+mongoDB
 ```
 

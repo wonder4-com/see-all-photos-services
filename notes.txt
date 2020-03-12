@@ -1,24 +1,31 @@
-Setting up Database
-    x- require mongoose
-    x- setup schema
-    
+API Requirements
+- Endpoints
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  - install webpack
-    - npm install webpack --save-dev
-    - npm install webpack-cli --save-dev
+- HTTP methods
+- Parameters - what does the endpoint expect?
+- Example responses - what does a response look like?
 
-    - bundle.js
+* RESTful API:
+includes CRUD:
+- Create 
+- Read
+- Update 
+- Delete
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+Command Line Dependencies (Only what's actually necessary to run program)
+  - npm i webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/preset-react
+  - npm i express body-parser nodemon mysql jquery react react-dom
+  - bundle.js... npm install -g bundle-js
+  - react
+  - react-dom
