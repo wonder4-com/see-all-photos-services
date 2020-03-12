@@ -1,33 +1,38 @@
+const mongoose = require('mongoose');
+
 // getting-started.js
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
-//to be notified if connection is made or errors
-var db = mongoose.connection;
+mongoose.connect('mongodb://localhost/photos', { useNewUrlParser: true });
+
+// to be notified if connection is made or errors
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-});
+db.once('open', () => {});
 
-//schema for user/photos
-let pictureSchema = mongoose.Schema({
+// schema for user/photos
+const pictureSchema = mongoose.Schema({
   id: Number,
-  userName: String,
-  userTitle: String,
-  userComment: String,
-  datePosted: Date,
-  photoURL: String
+  user_name: String,
+  photo_title: String,
+  date_added: Date,
+  url_address: String,
+  comment: String,
 });
-
 
 // this processes photo within schema
-let Photo = mongoose.model('Photo', pictureSchema);
+const Photo = mongoose.model('Photo', pictureSchema);
 
-
-
-//to save data to database 
-let save = (photos, callback) => {
-
+// to save data to database
+const save = (photos, callback) => {
+  Photo.insertMany(photos, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+    return callback('saved to database!');
+  });
 };
+
+// console.log(save(randomData, () => { console.log('complete!');
+//  }));
 
 module.exports.save = save;
