@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
-// getting-started.js
 
-mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:3200/photos', { useNewUrlParser: true });
 
 // schema for user/photos
-const pictureSchema = Schema({
-  id: Number,
-  user_name: String,
-  photo_title: String,
-  date_added: Date,
-  url_address: String,
-  comment: String,
+const pictureSchema = new mongoose.Schema({
+  file: {
+    user_name: String,
+    photo_title: String,
+    date_added: Date,
+    url_address: String,
+    comment: String,
+  },
 });
 
 // this processes photo within schema

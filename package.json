@@ -7,8 +7,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "node db/seeders/seeder.js",
-    "md-seed": "md-seed run",
+    "seed": "node db/seeders/users.seeder.js",
     "start": "nodemon server/index.js"
   },
   "dependencies": {
@@ -20,8 +19,10 @@
     "mongoose": "^5.9.4",
     "mongoose-data-seed": "^2.1.6",
     "mongoose-seed": "^0.6.0",
+    "mongoose-seed-db": "0.0.10",
     "mongoose-seeder": "^1.2.1",
     "nodemon": "^2.0.2",
+    "path": "^0.12.7",
     "to": "^0.2.9",
     "v-response": "^1.1.0",
     "vm": "^0.1.0"
