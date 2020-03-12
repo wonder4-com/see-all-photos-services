@@ -7,7 +7,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "node db/seeders/users.seeder.js",
+    "seed": "node db/seeders/dummyData.js",
     "start": "nodemon server/index.js"
   },
   "dependencies": {

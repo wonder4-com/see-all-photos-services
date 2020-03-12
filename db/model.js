@@ -4,17 +4,17 @@ const mongoose = require('mongoose');
 
 // schema for user/photos
 const pictureSchema = new mongoose.Schema({
-  file: {
-    user_name: String,
-    photo_title: String,
-    date_added: Date,
-    url_address: String,
-    comment: String,
-  },
+  id: Number,
+  user_name: String,
+  photo_title: String,
+  date_added: Date,
+  url_address: String,
+  comment: String,
+  
 });
 
 // this processes photo within schema
-const photo = mongoose.model('Photo', pictureSchema);
+module.exports= mongoose.model('Photo', pictureSchema);
 
 // const save = (photos, callback) => {
 //   photo.insertMany(photos, (err) => {
@@ -27,4 +27,4 @@ const photo = mongoose.model('Photo', pictureSchema);
 // don't need this function yet
 
 // console.log(save(data, () => {}));
-module.exports = photo;
+
