@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+/* eslint-disable no-unused-expressions */
+// const mongoose = require('mongoose');
 // const Model = require('./model.js');
 // import photo model from db (this may have to be rewritten)
 const Photo = require('../db/model.js');
@@ -25,6 +26,7 @@ exports.addAPhoto = (req, res) => {
 // photoid is the passed in value from the get request
 exports.ReadAPhoto = (req, res) => {
   // eslint-disable-next-line no-unused-expressions
+  // eslint-disable-next-line no-sequences
   Photo.findById(req.params.photoId), (err, photo) => {
     if (err) {
       res.send(err);
@@ -43,10 +45,10 @@ exports.updateAPhoto = (req, res) => {
 };
 
 exports.deleteAPhoto = (req, res) => {
-  Photo.remove({ _id: req.params.taskId }, (err, task) => {
+  Photo.remove({ _id: req.params.taskId }, (err, photo) => {
     if (err) {
       res.send(err);
     }
-    res.json({ message: 'Photo successfully deleted' });
+    res.json({ message: `${photo} successfully deleted` });
   });
 };

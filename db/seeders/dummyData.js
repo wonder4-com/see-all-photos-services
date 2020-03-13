@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Photo = require('../model');
 
 
-mongoose.connect('localhost:27017/wonder4allPhotos');
+mongoose.connect('localhost:27017/wonder4allPhotos', { useNewUrlParser: true }, { useUnifiedTopology: true });
 
 const photos = [
   new Photo({
@@ -2364,22 +2364,22 @@ const photos = [
   ),
 ];
 
-function exit() {
-  mongoose.disconnect();
-}
+// function exit() {
+//   mongoose.disconnect();
+// }
 
 function runSeed(array) {
   let done = 0;
   for (let i = 0; i < array.length; i += 1) {
-   // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars
     array[i].save((err, results) => {
       done += 1;
       if (done === array.length) {
-        exit();
+        mongoose.disconnect();
       }
     });
   }
 }
 
 runSeed(photos);
-// console.log(runSeed(photos), 'run seed was invoked');
+console.log(runSeed(photos), 'run seed was invoked');

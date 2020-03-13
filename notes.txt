@@ -11,14 +11,14 @@ includes CRUD:
 - Read
 - Update 
 - Delete
-  
-  
-  
-  
-  
-  
-  
-  
+
+//to stop socket
+$ sudo rm -rf /tmp/mongodb-27017.sock
+$ sudo service mongod start
+[ok]
+//to see what is running
+$ ls -lsah /tmp/mongodb-27017.sock
+0 srwx------ 1 mongodb mongodb 0 Aug 24 04:01 /tmp/mongodb-27017.sock 
   
   
   

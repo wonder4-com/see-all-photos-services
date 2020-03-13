@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost:3200/photos', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:3004/', { useNewUrlParser: true });
 
 // schema for user/photos
 const pictureSchema = new mongoose.Schema({
