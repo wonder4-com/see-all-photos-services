@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -26,9 +27,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/seeAllPhotos', (req, res) => {
-  console.log(res.body);
+//   console.log(res.body);
   Photo.find(res.body, (err, photo) => {
-    if (err) { 
+    if (err) {
       res.send(err);
     }
     res.json(photo);
@@ -37,7 +38,7 @@ app.get('/seeAllPhotos', (req, res) => {
 });
 
 app.get('/seeAllPhotos/:photoId', (req, res) => {
-  let { photoId } = req.params;
+  const { photoId } = req.params;
   Photo.findById(photoId, (err, photo) => {
     if (err) {
       res.send(err);
