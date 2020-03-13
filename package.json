@@ -1,7 +1,7 @@
 {
   "name": "see-all-photos-services",
-  "description": "",
-  "author": "",
+  "description": "a photo viewer app",
+  "author": "kelsy vaughn",
   "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
@@ -18,22 +18,27 @@
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
     "dependency": "0.0.1",
     "express": "^4.17.1",
     "install": "^0.13.0",
     "jquery": "^3.4.1",
-    "mongo": "^0.1.0",
-    "mongodb": "^3.5.5",
+    "jsdom": "^15.2.1",
+    "mongo-seeding-cli": "^3.4.0",
     "mongoose": "^5.9.4",
     "mongoose-seed-db": "0.0.10",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
+    "promise": "^8.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "to": "^0.2.9",
+    "utf-8-validate": "^5.0.2",
     "v-response": "^1.1.0",
-    "vm": "^0.1.0"
+    "vm": "^0.1.0",
+    "ws": "^7.2.3"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

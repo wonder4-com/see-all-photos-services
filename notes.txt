@@ -1,3 +1,42 @@
+
+
+
+
+
+
+
+
+
+
+// various url routes to controller
+module.exports = (app) => {
+  // eslint-disable-next-line global-require
+  const photos = require('./controller');
+  app.route('/');
+  // to display all photos (default)
+  app.get(photos.seeAllPhotos);
+  // to add a photo (not enabled)
+  // app.post(Controller.addAPhoto);
+
+  // for single photo url address
+  app.route('/:photoId')
+  // to get photo by photo id
+    .get(photos.readAPhoto);
+  // to change the photo (not enabled)
+  // .put(Controller.updateAPhoto);
+  // to delete a photo (not enabled)
+  // .delete(Controller.deleteAPhoto);
+};
+
+
+
+brew services list
+
+
+
+
+
+
 API Requirements
 - Endpoints
 

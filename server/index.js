@@ -2,16 +2,21 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// load models
-// const Photo = require('../db/model');
+// load database files
+const Photo = require('../db/model.js');
+
 
 const app = express();
 const port = 3004;
 
-const options = { useNewUrlParser: true, useUnifiedTopology: true };
 // mongoose instance connection url connection
-// mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/wonder4allPhotos', options);
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+const mongoDB = 'mongodb://localhost:27017/seeAllPhotos'; // to access db make sure the socket # is included here
+mongoose.connect(mongoDB, options);
+
+const db = mongoose.connection;
+db.on('error', (error) => console.error(error));
+db.once('open', () => console.log('connected to database'));
 
 // import middleware for body parser and json
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,12 +25,25 @@ app.use(bodyParser.json());
 // to display static file
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/seeAllPhotos', (req, res) => {
+  console.log(res.body);
+  Photo.find(res.body, (err, photo) => {
+    if (err) { 
+      res.send(err);
+    }
+    res.json(photo);
+    // res.send('Hello World!');
+  });
+});
 
-// import route from controller via routes
-const routes = require('./routes.js');
-// register route
-routes(app);
-
+app.get('/seeAllPhotos/:photoId', (req, res) => {
+  let { photoId } = req.params;
+  Photo.findById(photoId, (err, photo) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(photo);
+  });
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

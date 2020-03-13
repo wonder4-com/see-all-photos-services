@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost:3004/', { useNewUrlParser: true });
-
+// mongoose.connect('mongodb://localhost/seeAllPhotos');
+// this processes photo within schema
 // schema for user/photos
-const pictureSchema = new mongoose.Schema({
+const PhotoSchema = new mongoose.Schema({
   id: Number,
   user_name: String,
   photo_title: String,
@@ -12,5 +12,6 @@ const pictureSchema = new mongoose.Schema({
   comment: String,
 });
 
-// this processes photo within schema
-module.exports = mongoose.model('Photo', pictureSchema);
+const Photo = mongoose.model('Photo', PhotoSchema);
+
+module.exports = Photo;
