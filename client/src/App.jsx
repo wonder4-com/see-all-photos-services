@@ -2,7 +2,7 @@ import React from 'react';
 import PhotoCarousel from './components/PhotoCarousel.jsx';
 
 const App = () => (
-  <div>
+  <div id="container">
     Hello From App!
     <PhotoCarousel />
   </div>

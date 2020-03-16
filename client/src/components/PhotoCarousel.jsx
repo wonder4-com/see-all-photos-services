@@ -7,36 +7,42 @@ class PhotoCarousel extends Component {
     super(props);
     this.state = {
       photos: [],
+
     };
+    this.nextPhoto = this.nextPhoto.bind(this);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     ajax({
       type: 'GET',
       url: '/seeAllPhotos',
-      success: photos => this.setState({ photos }),
-      error: error => console.log('error'),
+      success: (photos) => this.setState({ photos }),
+      error: (error) => console.log('error', error),
     });
   }
 
-  // nextPhoto = () => {
-
-  // }
+  nextPhoto() {
+  //   const newIndex = this.state.photos[+1];
+  //   this.setState({
+  //     photos,
+  //   });
+  }
 
   // previousPhoto = () => {
 
   // }
 
   render() {
+    const { photos } = this.state;
     return (
-      <div className="photo-carousel">
-        <button type="button"> + </button>
+      <div className="carousel">
+        <button type="button" onClick={() => this.nextPhoto()}>Next</button>
         Hello Photos!
-        <PhotoCard photos={this.state.photos} />
-        <button type="button"> + </button>
+        <button type="button">Previous</button>
         <form action="/profile" method="post" encType="multipart/form-data">
           <input type="file" name="avatar" />
         </form>
+        <PhotoCard photos={photos} />
       </div>
     );
   }
