@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import PhotoCard from './PhotoCard.jsx';
+// import { View, ScrollView } from 'react-native';
 
 class PhotoCarousel extends Component {
+  // scrollRef = React.createRef();
   constructor(props) {
     super(props);
     this.state = {
       photos: [],
+      photoIndex: 0,
 
     };
     this.nextPhoto = this.nextPhoto.bind(this);
@@ -34,15 +37,16 @@ class PhotoCarousel extends Component {
 
   render() {
     const { photos } = this.state;
+    // const { photoIndex } = this.state;
     return (
       <div className="carousel">
-        <button type="button" onClick={() => this.nextPhoto()}>Next</button>
         Hello Photos!
+        <PhotoCard photos={photos} />
+        <button type="button" onClick={() => this.nextPhoto()}>Next</button>
         <button type="button">Previous</button>
         <form action="/profile" method="post" encType="multipart/form-data">
           <input type="file" name="avatar" />
         </form>
-        <PhotoCard photos={photos} />
       </div>
     );
   }
