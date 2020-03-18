@@ -1,6 +1,8 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { expect } from 'chai';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount, render, describe, it } from 'enzyme';
 
 const PhotoCard = require('../components/PhotoCard.jsx');
 

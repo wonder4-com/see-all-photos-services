@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import PhotoCard from './PhotoCard.jsx';
-import Arrows from './Arrows.jsx';
+// import Arrows from './Arrows.jsx';
 
 class PhotoCarousel extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class PhotoCarousel extends Component {
     const { photos } = this.state;
     return (
       <div className="carousel">
-          <PhotoCard photos={photos} />
+        <PhotoCard photos={photos} />
       </div>
     );
   }
