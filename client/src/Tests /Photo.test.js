@@ -12,3 +12,4 @@ describe('<Photo />', () => {
   const wrapper = shallow(<Photo photoObj={photoObj} />);
   expect(wrapper.find('.photoObj')).toBeDefined();
   expect(wrapper.find('.photoObj')).toHaveProperty(photoObj.photoURL);
+});

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import PhotoCard from './PhotoCard.jsx';
-// import { View, ScrollView } from 'react-native';
+import Arrows from './Arrows.jsx';
 
 class PhotoCarousel extends Component {
   constructor(props) {
