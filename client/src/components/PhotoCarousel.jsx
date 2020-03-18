@@ -2,15 +2,22 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import PhotoCard from './PhotoCard.jsx';
-import Arrows from './Arrows.jsx';
+// import Arrow from './Arrows.jsx';
+import ModalCard from './ModalCard.jsx';
+
+// const data = require('../../../db/seeders/data.js');
+
 
 class PhotoCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
       photos: [],
-
+      showModal: false,
     };
+    // this.handleClick = this.handleClick.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.hideModal= this.hideModal.bind(this);
   }
 
   componentDidMount() {
@@ -22,17 +29,47 @@ class PhotoCarousel extends Component {
     });
   }
 
-  nextPhoto() {
+  showModal() {
+    this.setState({ openModel: true });
+  };
 
+  hideModal() {
+    this.setState({ openModel: false });
+  };
+  
+  nextPhoto() {
+    const newIndex = this.state.clickedPhoto;
+    this.setState({
+
+    });
   }
+
+  prevPhoto() {
+    const newIndex = this.state.clickedPhoto;
+    this.setState({
+
+    });
+  }
+
 
   render() {
     const { photos } = this.state;
     return (
       <div className="carousel">
-        <Arrows className="left-arrow" />
+        <div className="button">
+        <button className="main-view" type="button" onClick={this.showModal}>See All Photos</button>
+        </div>
+        <div
+          className="slide-arrow-left"
+          direction="left"
+          clickFunction={this.prevPhoto}
+        />
         <PhotoCard photos={photos} />
-        <Arrows className="right-arrow" />
+        <div
+          className="slide-arrow-right"
+          direction="right"
+          clickFunction={this.nextPhoto}
+        />
       </div>
     );
   }
