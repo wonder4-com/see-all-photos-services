@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoCarousel from './components/PhotoCarousel.jsx';
+import PhotoCarousel from './PhotoCarousel.jsx';
 // import './photoStyle.css';
 
 const App = () => (
