@@ -1,17 +1,19 @@
 import React from 'react';
 import Photo from './Photo.jsx';
 
-// eslint-disable-next-line react/prop-types
-const PhotoCard = ({ photos }) => (
-  <div>
-    {
-    // eslint-disable-next-line react/prop-types
+const PhotoCard = ({ photos }) => {
+ 
+  return (
+    <div className="cards-slider">
+      <div className="cards-slider-wrapper">
+        {
     photos.map((photo) => (
-      // eslint-disable-next-line no-underscore-dangle
-      <Photo key={photo._id} photo={photo} />
+      <Photo key={photo._id} index={photo.index} photo={photo} />
     ))
-}
-  </div>
-);
+      }
+      </div>
+    </div>
+  );
+};
 
 export default PhotoCard;

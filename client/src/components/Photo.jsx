@@ -1,22 +1,17 @@
+/* eslint-disable camelcase */
 import React from 'react';
-// import styles from './photoStyle.css.js';
 
 const Photo = ({ photo }) => {
-  const styles = {
-    width: '75%',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
-
+  const { id, user_name, photo_title, date_added, url_address, comment } = photo;
   return (
     <div>
-      <div>
-      <img className="image" style={styles} src={photo.url_address} />
+      <div className="flex-container">
+        <img className="image" alt="" src={url_address} />
       </div>
-      {photo.photo_title}
-      {photo.date_added}
-      {photo.user_name}
-      {photo.comment}
+      <div className="title">{photo_title}</div>
+      <div className="subtitle">{date_added.slice(0, 10)}</div>
+      <strong className="title">{user_name}</strong>
+      <div className="subtitle">{comment}</div>
     </div>
   );
 };
