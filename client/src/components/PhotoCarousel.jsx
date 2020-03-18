@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import PhotoCard from './PhotoCard.jsx';
-// import Arrows from './Arrows.jsx';
+import Arrows from './Arrows.jsx';
 
 class PhotoCarousel extends Component {
   constructor(props) {
@@ -22,11 +22,17 @@ class PhotoCarousel extends Component {
     });
   }
 
+  nextPhoto() {
+
+  }
+
   render() {
     const { photos } = this.state;
     return (
       <div className="carousel">
+        <Arrows className="left-arrow" />
         <PhotoCard photos={photos} />
+        <Arrows className="right-arrow" />
       </div>
     );
   }

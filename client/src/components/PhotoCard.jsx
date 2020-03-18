@@ -1,19 +1,16 @@
 import React from 'react';
 import Photo from './Photo.jsx';
 
-const PhotoCard = ({ photos }) => {
- 
-  return (
+const PhotoCard = ({ photos }) => (
+  <div className="cards-slider-wrapper">
     <div className="cards-slider">
-      <div className="cards-slider-wrapper">
-        {
+      {
     photos.map((photo) => (
       <Photo key={photo._id} index={photo.index} photo={photo} />
     ))
       }
-      </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default PhotoCard;
