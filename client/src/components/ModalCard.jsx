@@ -2,13 +2,13 @@ import React from 'react';
 import Modal from './Modal.jsx';
 
 const ModalCard = ({ photos }) => {
-    return (
+  return (
         <div className="modal-card-wrapper">
-    <div className="modal-card">
+    <div className="modal-image">
       {
           photos.map((photo) => (
-              <Modal key={photo._id} index={photo.index} photo={photo} />
-        ))
+            <Modal key={photo._id} index={photos.indexOf(photo)} photo={photo} />
+          ))
       }
       </div>
     </div>

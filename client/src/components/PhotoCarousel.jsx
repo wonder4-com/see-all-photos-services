@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import PhotoCard from './PhotoCard.jsx';
 // import Arrow from './Arrows.jsx';
-import ModalCard from './ModalCard.jsx';
+import ModalCarousel from './ModalCarousel.jsx';
 
 // const data = require('../../../db/seeders/data.js');
 
@@ -13,7 +13,7 @@ class PhotoCarousel extends Component {
     super(props);
     this.state = {
       photos: [],
-      showModal: false,
+      show: false,
     };
     // this.handleClick = this.handleClick.bind(this);
     this.showModal = this.showModal.bind(this);
@@ -30,32 +30,34 @@ class PhotoCarousel extends Component {
   }
 
   showModal() {
-    this.setState({ openModel: true });
+    this.setState({ show: true });
   };
 
   hideModal() {
-    this.setState({ openModel: false });
+    this.setState({ show: false });
   };
   
-  nextPhoto() {
-    const newIndex = this.state.clickedPhoto;
-    this.setState({
+  // nextPhoto() {
+  //   const newIndex = this.state.clickedPhoto;
+  //   this.setState({
+  //     show: false,
+  //   });
+  // }
 
-    });
-  }
+  // prevPhoto() {
+  //   const newIndex = this.state.clickedPhoto;
+  //   this.setState({
 
-  prevPhoto() {
-    const newIndex = this.state.clickedPhoto;
-    this.setState({
-
-    });
-  }
+  //   });
+  // }
 
 
   render() {
-    const { photos } = this.state;
+    const { photos, show } = this.state;
     return (
       <div className="carousel">
+        <ModalCarousel show={show} handleClose={this.hideModal} photos={photos}/>
+       
         <div className="button">
         <button className="main-view" type="button" onClick={this.showModal}>See All Photos</button>
         </div>
