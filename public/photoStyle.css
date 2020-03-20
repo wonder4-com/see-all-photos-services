@@ -32,16 +32,17 @@
   }
 
   
-/*  show or hide model or carousel */
+/*  show or hide model */
   .display-block {
     display: block;
+    position: relative;
   }
   
   .display-none {
     display: none;
   }
   
-  /* arrows specs  */
+  /* photo carousel arrows specs  */
   .slide-arrow-right {
     cursor: pointer;
     font-size: 1rem;
@@ -108,19 +109,41 @@
 .modal-container {
   display: block;
   background-color: black;
-  opacity: 75%;
+  opacity: 100%;
   width: inherit;
 }
 
 .modal-main {
-  /* position: fixed;
+  /* overflow: hidden;
+  position: relative;
   top: 10%;
-  display: contents; */
+  display: contents;
+  width: 1050px;
+  left: 250px; */
 }
 
 .modal-card-wrapper {
   max-width: 300px;
 }
+.modal-slider {
+  /* position: relative;
+  max-width: 226px;
+  display: flex;
+  grid-template-columns: 25%;
+  overflow: hidden;
+  margin: 0 auto;  */
+}
+.modal-slider:after {
+  /* content: '';
+ 
+  width: 100%;
+  height: 264px;
+  border: 5px black;
+  position: absolute;
+  top: 0;
+  left: 0;  */
+}
+
 .modal-image {
   border: 2px solid black;
   max-width: 1000px;
@@ -128,11 +151,16 @@
   overflow: hidden;
   display: inline-flex;
   position: relative;
-  top: 20px;
+  top: 40px;
   left: 500px;
   opacity: inherit;
 }
 
+.close-button {
+  position: relative;
+  top: 10%;
+  left: 80%;
+}
 
 /* 
 .modal {
@@ -171,11 +199,16 @@
 
 .display-fade {
   display: none;
+  opacity: 20%;
 }
+
 .model-text {
-  left: 600px;
-  display: block;
+  left: 500px;
+  display: block; 
+  background-color: black;
+  opacity: 60%;
   position: relative;
+  width: 1010px;
 }
 
 .title {
@@ -193,3 +226,43 @@
   color: white;
   line-height: 18px;
 }
+
+  /* modal arrows specs  */
+  .modal-slide-arrow-right {
+    cursor: pointer;
+    font-size: 1rem;
+    position: fixed;
+    top: 35%;
+    left: 70%;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    border-top: 6px solid white;
+    border-right: 6px solid white;
+    transform: rotate(45deg);
+    margin: 50px;
+    border-radius: 10%;
+    opacity: 75%;
+  }
+      .modal-slide-arrow-right:hover {
+        opacity: 100%;
+      }
+  
+  .modal-slide-arrow-left {
+    cursor: pointer;
+    font-size: 1rem;
+    position: fixed;
+    top: 35%;
+    left: 25%;
+    width: 18px;
+    height: 18px;
+    border-top: 6px solid white;
+    border-right: 6px solid white;
+    transform: rotate(225deg);
+    margin: 50px;
+    border-radius: 10%;
+    opacity: 75%;
+  }
+      .modal-slide-arrow-left:hover {
+        opacity: 100%;
+      }
