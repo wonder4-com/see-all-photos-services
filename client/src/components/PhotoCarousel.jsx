@@ -1,77 +1,57 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/extensions */
-import React, { Component } from 'react';
-import { ajax } from 'jquery';
+import React from 'react';
 import PhotoCard from './PhotoCard.jsx';
-// import Arrow from './Arrows.jsx';
-import ModalCarousel from './ModalCarousel.jsx';
 
-// const data = require('../../../db/seeders/data.js');
-
-
-class PhotoCarousel extends Component {
+class PhotoCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: [],
-      show: false,
+      selectedPhoto: 0,
+      show: true,
     };
-    // this.handleClick = this.handleClick.bind(this);
-    this.showModal = this.showModal.bind(this);
-    this.hideModal= this.hideModal.bind(this);
+    this.prevPhoto = this.prevPhoto.bind(this);
+    this.nextPhoto = this.nextPhoto.bind(this);
   }
 
-  componentDidMount() {
-    ajax({
-      type: 'GET',
-      url: '/seeAllPhotos',
-      success: (photos) => this.setState({ photos }),
-      error: (error) => console.log('error', error),
+  prevPhoto() {
+    const { photos } = this.props;
+    // this.setState({
+    //   selectedPhoto: photos[3],
+    // })
+    console.log('left arrow has been clicked');
+  }
+
+  nextPhoto() {
+    const { photos } = this.props;
+    this.setState({
+      selectedPhoto: this.state.selectedPhoto + 4,
     });
+    console.log('right arrow has been clicked', photos[this.state.selectedPhoto]);
   }
-
-  showModal() {
-    this.setState({ show: true });
-  };
-
-  hideModal() {
-    this.setState({ show: false });
-  };
-  
-  // nextPhoto() {
-  //   const newIndex = this.state.clickedPhoto;
-  //   this.setState({
-  //     show: false,
-  //   });
-  // }
-
-  // prevPhoto() {
-  //   const newIndex = this.state.clickedPhoto;
-  //   this.setState({
-
-  //   });
-  // }
-
 
   render() {
-    const { photos, show } = this.state;
+    const { selectedPhoto, show } = this.state;
+    const showHideClassName = show ? 'photo display-block' : 'photo display-none';
     return (
-      <div className="carousel">
-        <ModalCarousel show={show} handleClose={this.hideModal} photos={photos}/>
-       
-        <div className="button">
-        <button className="main-view" type="button" onClick={this.showModal}>See All Photos</button>
+      <div className={showHideClassName}>
+        <PhotoCard photos={this.props.photos} currentPhoto={this.selectedPhoto} />
+        <div className="arrows">
+          <div
+            type="click"
+            className="slide-arrow-left"
+          // direction="left"
+            onClick={this.prevPhoto}
+          />
+          <div
+            type="click"
+            className="slide-arrow-right"
+          // direction="right"
+          // value={}
+            onClick={this.nextPhoto}
+          />
         </div>
-        <div
-          className="slide-arrow-left"
-          direction="left"
-          clickFunction={this.prevPhoto}
-        />
-        <PhotoCard photos={photos} />
-        <div
-          className="slide-arrow-right"
-          direction="right"
-          clickFunction={this.nextPhoto}
-        />
       </div>
     );
   }
