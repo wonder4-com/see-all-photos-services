@@ -1,16 +1,20 @@
 import React from 'react';
 import Modal from './Modal.jsx';
+import Text from './Text.jsx';
 
-const ModalCard = ({ photos }) => (
+const ModalCard = ({ photos }) => {
+  return (
   <div className="modal-card-wrapper">
-    <div className="modal-image">
       {
         photos.map((photo) => (
-          <Modal key={photo._id} index={photos.indexOf(photo)} photo={photo} />
+<React.Fragment>
+  <Modal key={photo._id} index={photos.indexOf(photo)} photo={photo} />
+  <Text key={photos.indexOf(photo)} photo={photo} />
+</React.Fragment>
         ))
       }
     </div>
-  </div>
-);
+  )
+};
 
 export default ModalCard;

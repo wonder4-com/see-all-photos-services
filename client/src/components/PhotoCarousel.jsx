@@ -5,7 +5,6 @@ class PhotoCarousel extends React.Component {
     super(props);
     this.state = {
       selectedPhoto: 0,
-      show: true,
     };
     this.prevPhoto = this.prevPhoto.bind(this);
     this.nextPhoto = this.nextPhoto.bind(this);
@@ -37,12 +36,12 @@ class PhotoCarousel extends React.Component {
     // console.log('right arrow has been clicked', photos[this.state.selectedPhoto]);
   }
 
+
   render() {
-    const { selectedPhoto, show } = this.state;
+    const { selectedPhoto } = this.state;
     const { photos } = this.props;
-    const showHideClassName = show ? 'photo display-block' : 'photo display-none';
     return (
-      <div className={showHideClassName}>
+      <div className="carousel-container">
         <PhotoCard photos={photos} selectedPhotoIndex={selectedPhoto} />
         <div className="arrows">
           <div

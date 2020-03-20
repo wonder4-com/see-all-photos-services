@@ -9,18 +9,17 @@ class ModalCarousel extends React.Component {
     };
   }
 
-
   render() {
     const { mainPhoto } = this.state;
-    const { handleClose, photos, show } = this.props;
-    const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+    const { photos, show } = this.props;
+    const showHideClassName = show ? 'model display-block' : 'model display-none';
     return (
       <div>
         <div className={showHideClassName}>
           <section className="modal-main">
             <ModalCard
               photos={photos}/>
-            <button onClick={handleClose}>close X</button>
+            <button onClick={this.hideModel}>close X</button>
           </section>
         </div>
       </div>

@@ -9,9 +9,12 @@ class App extends React.Component {
     this.state = {
       photos: [],
       show: false,
+      showCarousel: true,
     };
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    // this.showPhotoCarousel = this.showPhotoCarousel.bind(this);
+    // this.hidePhotoCarousel = this.hidePhotoCarousel.bind(this);
   }
 
   componentDidMount() {
@@ -24,29 +27,39 @@ class App extends React.Component {
   }
 
   showModal() {
-    this.setState({ show: true });
+    console.log('show modal was invoked');
+    this.setState({ 
+      show: true,
+      showCarousel: false,
+    });
   }
 
   hideModal() {
-    this.setState({ show: false });
+    this.setState({ 
+      show: false,
+      showCarousel: true,
+    });
   }
 
   render() {
-    const { photos, show } = this.state;
+    const { photos, show, showCarousel } = this.state;
+    const showHideClassName = showCarousel ? 'carousel display-all' : 'carousel display-fade';
     return (
       <div id="app">
         <div className="modal-container">
-          <div className="modal-carousel">
             <ModalCarousel
               photos={photos}
               show={show}
               handleClose={this.hideModal}/>
           </div>
-          </div>
-          <div className="carousel-container">
-          <PhotoCarousel photos={photos} />
+
+          <div className={showHideClassName}>
+          <PhotoCarousel
+          photos={photos}
+          showCarousel={showCarousel}/>
+          
           <div className="see-all-photos-button">
-            <button type="button" onClick={this.showModal}>
+            <button type="button" onClick={this.showModal} >
               See All {photos.length-1}
             </button>
           </div>
