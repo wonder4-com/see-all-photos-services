@@ -23,5 +23,8 @@ module.exports = {
     'react',
   ],
   rules: {
+    disable: 'react/no-access-state-in-setstate',
+    disable: 'import/extensions',
+    disable: 'props validation',
   },
 };

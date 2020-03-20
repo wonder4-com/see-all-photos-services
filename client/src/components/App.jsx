@@ -35,18 +35,19 @@ class App extends React.Component {
     const { photos, show } = this.state;
     return (
       <div id="app">
-        <div className="container">
-          <div className="button">
+        <div className="modal-container">
+          <div className="modal-carousel">
             <ModalCarousel
               photos={photos}
               show={show}
-              handleClose={this.hideModal}
-            />
+              handleClose={this.hideModal}/>
           </div>
+          </div>
+          <div className="carousel-container">
           <PhotoCarousel photos={photos} />
           <div className="see-all-photos-button">
             <button type="button" onClick={this.showModal}>
-              See All Photos
+              See All {photos.length-1}
             </button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalCard from './ModalCard.jsx';
+// import ModalCard from './ModalCard.jsx';
 
 
 const ModalDisplay = ({ handleClose, show, photos }) => {
