@@ -43,16 +43,16 @@ class ModalCarousel extends React.Component {
     return (
       <div>
         <div className={showHideClassName}>
-          <section className="modal-main">
             <div className="close-button"> 
             <button onClick={handleClose}>close X</button>
               </div>
+              <div className="full-modal-container">
               <div className="side-bar-container">
             <ModalSideBar photos={photos} />
             </div>
             <ModalCard
               photos={photos} selectedPhotoIndex={selectedPhoto} />
-          </section>
+         
           <div className="arrows">
           <div
             type="click"
@@ -62,6 +62,7 @@ class ModalCarousel extends React.Component {
             type="click"
             className="modal-slide-arrow-right"
             onClick={this.nextPhoto}/>
+             </div>
         </div>
         </div>
       </div>
