@@ -1,5 +1,5 @@
 import React from 'react';
-import Star from './userAvators/Star.jsx';
+import Star from './userAvatars/Star.jsx';
 import Person from './userAvatars/Person.jsx';
 import PersonRed from './userAvatars/PersonRed.jsx';
 import Barista from './userAvatars/Barista.jsx';

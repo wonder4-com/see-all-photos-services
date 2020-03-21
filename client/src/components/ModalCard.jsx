@@ -10,7 +10,7 @@ const ModalCard = ({ photos, selectedPhotoIndex }) => {
       {
         renderPhotos.map((photo) => (
 <React.Fragment>
-  <Modal key={photo._id} index={photos.indexOf(photo)} photo={photo} />
+  <Modal key={photo._id} photo={photo} />
   <Text key={photos.indexOf(photo)} photo={photo} />
 </React.Fragment>
         ))
