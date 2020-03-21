@@ -1,93 +1,47 @@
+.carousel-container {
+  position: relative;
+}
 
+.see-all-photos-button {
+  padding: 0;
+  position: fixed;
+  top: 42%;
+  left: 95%;
+  font: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: Helvetica Neue;
+  width: 105.328px;
+  height: 36px;
+}
 
-.flex-container {
-    display: flex;
-    background-color: black;
-    outline: 10px black;
-    size: 500px;
-    padding: 15;
-    height: '25%';
-    width: '25%';
-  }
-  
   .image {
     background-color: black;
-    height: relative;
-    width: relative;
     margin: 10;
     border: 2px solid white;
-    background-size: 'cover';
-    background-position: 'center';
+    background-size: cover;
+    background-position: center;
     width: 450px;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
   }
-  
-  .title {
-    font-family: Arial, Helvetica, sans-serif;
-    font: Helvetica Neue;
-    font-size: 14px;
-    color: #000;
-    line-height: 18px;
-  }
-  
-  .subtitle {
-    font-family: Arial, Helvetica, sans-serif;
-    font: Helvetica Neue;
-    font-size: 12px;
-    color: #000;
-    line-height: 18px;
-  }
-  
-  .image-slide {
-  height: 100%;
-  width: 100%;
-  transition: background-image .3s ease-in-out;
-  }
 
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  .modal-main {
-    position:fixed;
-    background: black;
-    width: 75%;
-    height: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-
-  .modal-card-wrapper {
-    position:fixed;
-    background: black;
-    width: 75%;
-    height: 60%;
-    top: 50%;
-    left: 50%;
-  }
   
-  
+/*  show or hide model */
   .display-block {
     display: block;
+    position: relative;
   }
   
   .display-none {
     display: none;
   }
   
-  
+  /* photo carousel arrows specs  */
   .slide-arrow-right {
     cursor: pointer;
     font-size: 1rem;
-    position: absolute;
-    top: 20%;
+    position: fixed;
+    top: 28%;
     right: 1rem;
     width: 18px;
     height: 18px;
@@ -98,12 +52,15 @@
     border-radius: 10%;
     opacity: 75%;
   }
+      .slide-arrow-right:hover {
+        opacity: 100%;
+      }
   
   .slide-arrow-left {
     cursor: pointer;
     font-size: 1rem;
     position: fixed;
-    top: 20%;
+    top: 28%;
     left: 1rem;
     width: 18px;
     height: 18px;
@@ -114,25 +71,17 @@
     border-radius: 10%;
     opacity: 75%;
   }
+      .slide-arrow-left:hover {
+        opacity: 100%;
+      }
 
+/* cards specs */
   .cards-slider-wrapper {
-    display: flex;
+    /* display: flex; */
     position: fixed;
-    /* overflow: hidden; */
-    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-    .cards-slider-wrapper .card {
-      flex: 1;
-      min-width: 300px;
-      opacity: 0.7;
-      transform: scale(1);
-      box-shadow: none;
-      background-color: black;
-      border-color: black; 
-      transition: opacity 300ms linear, border-color 300ms linear, background-color 300ms linear, transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-      .cards-slider-wrapper .card .details {
-        opacity: 0;
-        transition: opacity 150ms linear; }
-  
+    top: 20%;
+  }
+
   .cards-slider {
     position: relative;
     max-width: 226px;
@@ -141,10 +90,191 @@
     margin: 0 auto; }
     .cards-slider:after {
         content: '';
-        display: block;
+        /* display: block; */
         width: 100%;
         height: 264px;
         border: 5px black;
         position: absolute;
         top: 0;
         left: 0; }
+        
+/* modal specs  */
+.modal-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  align-items: right;
+  background-color: rgb(146, 146, 146);
+  overflow: hidden;
+}
+
+.full-modal-container {
+  display: flex;
+  background-color: black;
+  width: 80%;
+  max-width:  940px;
+  max-height: 900px;
+  position: relative;
+  left: 18%;
+  top: 15%;
+  border-top-left-radius: 1%;
+  border-bottom-left-radius: 1%;
+}
+
+.modal-card-wrapper {
+  max-width: 85%;
+  object-fit: contain;
+}
+
+
+.modal-image {
+  object-fit: contain;
+  max-width: 940px;
+  max-height: 705px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  left: 0%;
+  opacity: 100%;
+  object-fit: scale-down;
+} 
+.modal-image img{
+  max-width: 940px;
+}
+
+.close-button {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  left: 80%;
+}
+
+.display-all {
+  display: block;
+}
+
+.display-fade {
+  display: none;
+}
+
+.model-text {
+  left: 0%;
+  display: block; 
+  background-color: black;
+  opacity: 60%;
+  position: relative;
+  width: 940px;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font: Helvetica;
+  font-size: 14px;
+  color: white;
+  line-height: 18px;
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font: Helvetica Neue;
+  font-size: 12px;
+  color: white;
+  line-height: 18px;
+}
+
+  /* modal arrows specs  */
+  .modal-slide-arrow-right {
+    cursor: pointer;
+    font-size: 1rem;
+    position: fixed;
+    top: 30%;
+    left: 59%;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    border-top: 6px solid white;
+    border-right: 6px solid white;
+    transform: rotate(45deg);
+    margin: 50px;
+    border-radius: 10%;
+    opacity: 75%;
+  }
+      .modal-slide-arrow-right:hover {
+        opacity: 100%;
+      }
+  
+  .modal-slide-arrow-left {
+    cursor: pointer;
+    font-size: 1rem;
+    position: fixed;
+    top: 30%;
+    left: 19%;
+    width: 18px;
+    height: 18px;
+    border-top: 6px solid white;
+    border-right: 6px solid white;
+    transform: rotate(225deg);
+    margin: 50px;
+    border-radius: 10%;
+    opacity: 75%;
+  }
+      .modal-slide-arrow-left:hover {
+        opacity: 100%;
+      }
+.person-red-svg {
+  fill: red;
+}
+
+.person-svg {
+  fill: grey;
+}
+
+.star-svg {
+  fill: red;
+}
+
+ul {
+  float: left;
+}
+
+/* modal part two specs */
+.side-bar-container {
+  display: flex;
+  width: 360px;
+  height: 2735px;
+  border-bottom-right-radius: 2%;
+  border-top-right-radius: 2%;
+  position: absolute;
+  flex-flow: column;
+  left: 940px;
+  top: 0%;
+  background-color: white;
+}
+
+.modal-side-bar {
+  display: flex;
+  flex-direction: initial;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  width: 360px;
+  border: 10px solid white;
+  border-radius: 1%;
+}
+
+.side-bar-image {
+  justify-content: space-between;
+  flex-shrink: 2;
+  max-width: 300px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  object-fit: contain;
+}
+
+.side-bar-image img{
+  max-width: 300px;
+  max-height: 165px;
+  border-radius: 1%;
+  border: 5px solid white;
+}
