@@ -7,7 +7,7 @@ import BarMan from './userAvatars/BarMan.jsx';
 import Glasses from './userAvatars/Glasses.jsx';
 
 const randomUser = [Barista, BarMan, Glasses];
-const randomize = Math.floor(Math.random() * 3);
+const randomize = Math.floor(Math.random() * 100);
 
 const Text = ({ photo }) => {
     const { id, user_name, photo_title, date_added, url_address, comment } = photo;
@@ -19,7 +19,7 @@ const Text = ({ photo }) => {
       <Glasses />
         <strong className="title">{user_name}</strong>
       <div className="subtitle">
-        <ul><PersonRed /><Person />{id+100} <Star /> {id} </ul>
+        <ul><PersonRed /><Person />{id*21} <Star /> {id*randomize} </ul>
           </div>
       </div>
         </div>

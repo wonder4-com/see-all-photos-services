@@ -1,5 +1,6 @@
 import React from 'react';
 import ModalCard from './ModalCard.jsx';
+import ModalSideBar from './ModalSideBar.jsx';
 
 class ModalCarousel extends React.Component {
   constructor(props) {
@@ -45,6 +46,9 @@ class ModalCarousel extends React.Component {
           <section className="modal-main">
             <div className="close-button"> 
             <button onClick={handleClose}>close X</button>
+              </div>
+              <div className="side-bar-container">
+            <ModalSideBar photos={photos} />
             </div>
             <ModalCard
               photos={photos} selectedPhotoIndex={selectedPhoto} />

@@ -18,8 +18,8 @@
     background-color: black;
     margin: 10;
     border: 2px solid white;
-    background-size: 'cover';
-    background-position: 'center';
+    background-size: cover;
+    background-position: center;
     width: 450px;
     height: 300px;
     overflow: hidden;
@@ -101,20 +101,23 @@
 /* modal specs  */
 .modal-container {
   display: block;
-  background-color: black;
+  width: 65%;
+  height: auto;
+  align-items: center;
+  background-color: rgb(54, 54, 54);
   opacity: 100%;
   width: inherit;
   overflow: hidden;
 }
 
 .modal-card-wrapper {
-  max-width: 300px;
+  max-width: 85%;
   object-fit: contain;
 }
 
 
 .modal-image {
-  border: 2px solid black;
+  border: 5px solid black;
   object-fit: contain;
   max-width: 1005px;
   max-height: 600px;
@@ -224,3 +227,49 @@ ul {
 }
 
 /* modal part two specs */
+.side-bar-container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: flex-wrap;
+  flex: scale;
+  width: 300px;
+  height: 650px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 77%;
+  top: 9%;
+  padding: 4px;
+  background-color: white;
+}
+.modal-side-bar {
+  display: block;
+  overflow: scroll;
+}
+
+.side-bar {
+  display: flex; 
+  flex: scale;
+  border: 10px solid white;
+  overflow: auto;
+  /* max-height: 165px;
+  max-width: 300px; */
+  object-fit: scale-down;
+  width: 90%;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.side-bar-image {
+  display: inherit;
+  flex: scale;
+  max-height: 165px;
+  max-width: 300px;
+  width: fit-content;
+  object-fit: scale-down;
+  flex-basis: shrink;
+  flex-shrink: 1;
+  background-size: cover;
+  background-position: center;
+}
