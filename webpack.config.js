@@ -5,12 +5,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.jsx$/],
+        test: [/\.(png|jp(e*)g|svg|gif|jsx)$/],
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: ['babel-loader', 'file-loader'],
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],
+            name: 'images/[hash]-[name].[ext]',
           },
         },
       },

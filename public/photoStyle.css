@@ -10,18 +10,12 @@
   font: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: Helvetica Neue;
-  /* width: 150%;
-  height: 18px; */
-  /* top: 383.672px;
-  left: 1674.67px; */
   width: 105.328px;
   height: 36px;
 }
 
   .image {
     background-color: black;
-    /* height: relative;
-    width: relative; */
     margin: 10;
     border: 2px solid white;
     background-size: 'cover';
@@ -93,7 +87,6 @@
     max-width: 226px;
     display: flex;
     grid-template-columns: 25%;
-    /* overflow: hidden; */
     margin: 0 auto; }
     .cards-slider:after {
         content: '';
@@ -111,87 +104,35 @@
   background-color: black;
   opacity: 100%;
   width: inherit;
-}
-
-.modal-main {
-  /* overflow: hidden;
-  position: relative;
-  top: 10%;
-  display: contents;
-  width: 1050px;
-  left: 250px; */
+  overflow: hidden;
 }
 
 .modal-card-wrapper {
   max-width: 300px;
+  object-fit: contain;
 }
-.modal-slider {
-  /* position: relative;
-  max-width: 226px;
-  display: flex;
-  grid-template-columns: 25%;
-  overflow: hidden;
-  margin: 0 auto;  */
-}
-.modal-slider:after {
-  /* content: '';
- 
-  width: 100%;
-  height: 264px;
-  border: 5px black;
-  position: absolute;
-  top: 0;
-  left: 0;  */
-}
+
 
 .modal-image {
   border: 2px solid black;
-  max-width: 1000px;
+  object-fit: contain;
+  max-width: 1005px;
   max-height: 600px;
   overflow: hidden;
-  display: inline-flex;
+  display: inline-block;
   position: relative;
   top: 40px;
   left: 500px;
   opacity: inherit;
+  object-fit: scale-down;
 }
 
 .close-button {
   position: relative;
   top: 10%;
+  width: 100%;
   left: 80%;
 }
-
-/* 
-.modal {
-  position: fixed;
-  top: 10;
-  left: 10;
-  width: 50%;
-  height: 50%;
-  background: black;
-} */
-
-/* .modal-main { */
-  /* position: fixed;
-  background: black;
-  top: 15%;
-  left: 15%;
-  transform: translate(-50%,-50%);
-  width: 100%; */
-
-/* .modal-card-wrapper  */
-  /* flex: 1;
-  background-color: black;
-  border-color: black; 
-  width: 500px;
-  height: 250px; */
-
-
-/* .modal-image {
-  
-} */
-
 
 .display-all {
   display: initial;
@@ -213,7 +154,7 @@
 
 .title {
   font-family: Arial, Helvetica, sans-serif;
-  font: Helvetica Neue;
+  font: Helvetica;
   font-size: 14px;
   color: white;
   line-height: 18px;
@@ -266,3 +207,18 @@
       .modal-slide-arrow-left:hover {
         opacity: 100%;
       }
+.person-red-svg {
+  fill: red;
+}
+
+.person-svg {
+  fill: grey;
+}
+
+.star-svg {
+  fill: red;
+}
+
+ul {
+  float: left;
+}
