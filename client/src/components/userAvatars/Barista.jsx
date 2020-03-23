@@ -2,8 +2,8 @@ import React from 'react';
 
 const Barista = () => {
   return (
-  <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg">
-<g data-name="16 copy 4">
+  <svg height="18" width="18">
+<g >
   <path d="M24 468V331.472a40 40 0 0125.641-37.334L128 264h80l104 40v184H44a20 20 0 01-20-20z" fill="#f2f2f2"/>
   <path d="M64 288l24 104v40h160v-40l24-104-32-8-16 80H112l-16-80z" fill="#804913"/>
   <path d="M191.6 296h-47.2a20 20 0 01-19.612-23.922L136 216h64l11.216 56.078A20 20 0 01191.6 296z" fill="#ffd4cf"/>
