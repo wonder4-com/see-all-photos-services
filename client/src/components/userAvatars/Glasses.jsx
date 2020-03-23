@@ -2,7 +2,7 @@ import React from 'react';
 
 const Glasses = () => {
   return (
-<svg x="18px" y="18px"
+<svg x="0px" y="0px"
 	 viewBox="0 0 318.965 318.965">
 <g>
 	<g>

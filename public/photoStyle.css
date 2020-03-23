@@ -15,11 +15,12 @@
 }
 
   .image {
-    background-color: rgb(46, 12, 12);
+    background-color: rgb(51, 51, 51);
     margin: 10;
     border: 2px solid white;
     background-size: cover;
     background-position: center;
+    align-self: stretch;
     width: 446px;
     height: 298px;
     overflow: hidden;
@@ -29,7 +30,7 @@
 /*  show or hide model */
   .display-block {
     display: block;
-    background-color:rgb(174, 180, 185);
+    background-color:rgb(51, 51 , 51, 0.7);
     padding-bottom: 50px;;
   }
   
@@ -160,12 +161,17 @@
   display: none;
 }
 
-.model-text {
+/* .modal-text-block {
+  
+} */
+
+.modal-text {
   left: 0%;
   top: 65px;
   display: block;
-  background-color: #000000;
-  opacity: 50%;
+  background: rgba(51, 51, 51, 0.5);
+  
+  /* opacity: 50%; */
   position: relative;
   width: 940px;
   height: 86px;
@@ -175,18 +181,18 @@
   font-family: Arial, Helvetica, sans-serif;
   font: Helvetica;
   font-size: 14px;
-  color:#ffffff;
+  color: white !important;
   line-height: 18px;
-  opacity: 100%;
+  opacity: 100% !important;
 }
 
 .subtitle {
   font-family: Arial, Helvetica, sans-serif;
   font: Helvetica Neue;
   font-size: 12px;
-  color:#999999;
+  color: white !important;
   line-height: 18px;
-  opacity: 100%;
+  opacity: 100% !important;
 }
 
   /* modal arrows specs  */
@@ -240,6 +246,12 @@
   fill: red;
 }
 
+.avator-svg {
+  fill: white;
+  height: 30px;
+  width: 30px;
+}
+
 ul {
   float: left;
 }
@@ -255,6 +267,7 @@ ul {
   flex-flow: column;
   left: 940px;
   top: 0%;
+  align-self: stretch;
   /* border: px solid white; */
   overflow: hidden;
   background-color: white;
@@ -289,9 +302,10 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   overflow: auto;
+  align-self: stretch;
   transition: transform .5s ease;
   width: 360px;
-  height: 689px;
+  height: 820px;
   position: relative;
   padding: 5px;
 }
@@ -307,9 +321,11 @@ ul {
 }
 .side-bar-image {
   justify-content: flex-start;
-  align-content: stretch;
+  align-self: stretch;
   /* flex-shrink: 2; */
   max-width: 300px;
+  min-width: 147px;
+
   flex-direction: column;
   flex-wrap: wrap;
   object-fit: contain;
@@ -321,5 +337,6 @@ ul {
   max-width: 300px;
   max-height: 165px;
   border-radius: 5%;
+  min-width: 147px;
   /* border: 5px solid white; */
 }

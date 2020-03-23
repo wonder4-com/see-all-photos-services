@@ -13,10 +13,10 @@ const User = randomUser[randomize/100 * 3];
 const Text = ({ photo }) => {
     const { id, user_name, photo_title, date_added, url_address, comment } = photo;
     return(
-        <div className="model-text"> 
+        <div className="modal-text"> 
         <div className="title">{photo_title} {comment}</div>
       <div className="subtitle">{date_added.slice(0, 10)}</div>
-      <div className="title"><Barista />{user_name}</div>
+      <div className="title"><li><BarMan />&nbsp;{user_name}</li></div>
       <div className="subtitle">
         <ul><PersonRed /><Person />
         {id*21}<Star />
