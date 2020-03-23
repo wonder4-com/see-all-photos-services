@@ -103,7 +103,7 @@
 /* modal specs  */
 .modal-container {
   display: block;
-  width: 120%;
+  width: 100%;
   height: 2735px;
   align-items: right;
   /* background-color: lightslategrey; */
@@ -162,7 +162,7 @@
 
 .model-text {
   left: 0%;
-  top: 84px;
+  top: 65px;
   display: block;
   background-color: #000000;
   opacity: 50%;
@@ -289,6 +289,7 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   overflow: auto;
+  transition: transform .5s ease;
   width: 360px;
   height: 689px;
   position: relative;
