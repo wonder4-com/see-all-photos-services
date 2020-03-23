@@ -16,14 +16,13 @@ const Text = ({ photo }) => {
         <div className="model-text"> 
         <div className="title">{photo_title} {comment}</div>
       <div className="subtitle">{date_added.slice(0, 10)}</div>
-      <div>
-  
-        <strong className="title">{user_name}</strong>
+      <div className="title"><Barista />{user_name}</div>
       <div className="subtitle">
-        <ul><PersonRed /><Person />{id*21} <Star /> {id*randomize} </ul>
+        <ul><PersonRed /><Person />
+        {id*21}<Star />
+        {id*randomize}</ul>
           </div>
       </div>
-        </div>
     )
 }
 

@@ -48,7 +48,13 @@ class ModalCarousel extends React.Component {
               </div>
               <div className="full-modal-container">
               <div className="side-bar-container">
+              <div className="restaurant-title" >
+                Photos for Restaurant Kitchen
+              <div className="restaurant-subtitle">
+                See All {photos.length}
+                </div>
             <ModalSideBar photos={photos} />
+            </div>
             </div>
             <ModalCard
               photos={photos} selectedPhotoIndex={selectedPhoto} />
