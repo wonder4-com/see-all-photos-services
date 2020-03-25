@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalCard from './ModalCard.jsx';
 import ModalSideBar from './ModalSideBar.jsx';
-
+import styles from '../css/ModalCarousel.css';
 class ModalCarousel extends React.Component {
   constructor(props) {
     super(props);
@@ -43,14 +43,16 @@ class ModalCarousel extends React.Component {
     return (
       <div>
         <div className={showHideClassName}>
-            <div className="close-button"> 
+          <div className={styles.overlay}>
+            <div className={styles.button}> 
             <button onClick={handleClose}>close X</button>
               </div>
-              <div className="full-modal-container">
-              <div className="side-bar-container">
-              <div className="restaurant-title" >
+        
+              <div className={styles.fullModalContainer}>
+              <div className={styles.sideBarContainer}>
+              <div className={styles.title} >
                 Photos for Restaurant Kitchen
-              <div className="restaurant-subtitle">
+              <div className={styles.subtitle}>
                 See All {photos.length}
                 </div>
             <ModalSideBar photos={photos} />
@@ -62,13 +64,14 @@ class ModalCarousel extends React.Component {
           <div className="arrows">
           <div
             type="click"
-            className="modal-slide-arrow-left"
+            className={styles.arrowLeft}
             onClick={this.prevPhoto}/>
           <div
             type="click"
-            className="modal-slide-arrow-right"
+            className={styles.arrowRight}
             onClick={this.nextPhoto}/>
              </div>
+        </div>
         </div>
         </div>
       </div>

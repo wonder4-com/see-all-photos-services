@@ -1,11 +1,11 @@
-.carousel-container {
-    /* position: absolute; */
+.container {
+    position: absolute;
   }
   
-  .slide-arrow-right {
+  .rightArrow {
     cursor: pointer;
     font-size: 1rem;
-    position: absolute;
+    position: fixed;
     top: 28%;
     right: 1rem;
     width: 18px;
@@ -17,14 +17,14 @@
     border-radius: 10%;
     opacity: 75%;
   }
-      .slide-arrow-right:hover {
+      .rightArrow:hover {
         opacity: 100%;
       }
   
-  .slide-arrow-left {
+  .leftArrow {
     cursor: pointer;
     font-size: 1rem;
-    position: absolute;
+    position: fixed;
     top: 28%;
     left: 1rem;
     width: 18px;
@@ -36,7 +36,7 @@
     border-radius: 10%;
     opacity: 75%;
   }
-      .slide-arrow-left:hover {
+      .leftArrow:hover {
         opacity: 100%;
       }
 

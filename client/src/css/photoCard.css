@@ -1,15 +1,17 @@
-.cards-slider-wrapper {
+.wrapper {
     /* display: flex; */
     position: absolute;
+    margin-top: 250px;
     top: 20%;
-  }
-  .cards-slider {
-    position: relative;
+  } 
+
+  .slider {
+    position: sticky;
     max-width: 226px;
     display: flex;
     grid-template-columns: 25%;
     margin: 0 auto; }
-    .cards-slider:after {
+    .slider:after {
         content: '';
         /* display: block; */
         width: 100%;

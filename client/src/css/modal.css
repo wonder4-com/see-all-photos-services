@@ -1,4 +1,4 @@
-.modal-image {
+.image {
     object-fit: contain;
     max-width: 940px;
     max-height: 705px;
@@ -10,6 +10,6 @@
     opacity: 100%;
     object-fit: scale-down;
   } 
-  .modal-image img{
+  .image img{
     max-width: 940px;
   }

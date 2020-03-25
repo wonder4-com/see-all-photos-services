@@ -1,5 +1,7 @@
 import React from 'react';
 import PhotoCard from './PhotoCard.jsx';
+import styles from '../css/photoCarousel.css';
+
 class PhotoCarousel extends React.Component {
   constructor(props) {
     super(props);
@@ -41,16 +43,16 @@ class PhotoCarousel extends React.Component {
     const { selectedPhoto } = this.state;
     const { photos } = this.props;
     return (
-      <div className="carousel-container">
+      <div className={styles.container}>
         <PhotoCard photos={photos} selectedPhotoIndex={selectedPhoto} />
         <div className="arrows">
           <div
             type="click"
-            className="slide-arrow-left"
+            className={styles.leftArrow}
             onClick={this.prevPhoto}/>
           <div
             type="click"
-            className="slide-arrow-right"
+            className={styles.rightArrow}
             onClick={this.nextPhoto}/>
         </div>
       </div>

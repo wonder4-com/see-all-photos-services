@@ -2,7 +2,7 @@ import React from 'react';
 import { ajax } from 'jquery';
 import PhotoCarousel from './PhotoCarousel.jsx';
 import ModalCarousel from './ModalCarousel.jsx';
-
+import styles from '../css/app.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -43,10 +43,10 @@ class App extends React.Component {
 
   render() {
     const { photos, show, showCarousel } = this.state;
-    const showHideClassName = showCarousel ? 'carousel display-all' : 'carousel display-fade';
+    const showHideClassName = showCarousel ? `${styles.displayAll}` : `${styles.displayFade}`;
     return (
       <div id="app">
-        <div className="modal-container">
+        <div className={styles.container}>
             <ModalCarousel
               photos={photos}
               show={show}
@@ -58,7 +58,7 @@ class App extends React.Component {
           photos={photos}
           showCarousel={showCarousel}/>
           
-          <div className="see-all-photos-button">
+          <div className={styles.button}>
             <button type="button" onClick={this.showModal} >
               See All {photos.length-1}
             </button>
