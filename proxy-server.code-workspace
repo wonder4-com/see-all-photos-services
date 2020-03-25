@@ -1,0 +1,24 @@
+{
+    "folders": [
+        {
+            "name": "service-reviews",
+            "path": "/Users/kelsyvaughn/Documents/Hack Reactor/firtsHalfOfCourse/Course/service-reviews"
+        },
+        {
+            "name": "popular-dishes",
+            "path": "/Users/kelsyvaughn/Documents/Hack Reactor/firtsHalfOfCourse/Course/popular-dishes"
+        },
+        {
+            "name": "Restaurant-Information",
+            "path": "/Users/kelsyvaughn/Documents/Hack Reactor/firtsHalfOfCourse/Course/Restaurant-Information"
+        },
+        {
+            "name": "see-all-photos-services",
+            "path": "."
+        },
+        {
+            "name": "see-all-photos-proxy",
+            "path": "/Users/kelsyvaughn/Documents/Hack Reactor/firtsHalfOfCourse/Course/see-all-photos-proxy"
+        }
+    ]
+}
