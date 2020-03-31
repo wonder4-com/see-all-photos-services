@@ -1,4 +1,6 @@
- 
+ body {
+   overflow: hidden;
+ }
   /*  show or hide model */
   .display-block {
       display: block;

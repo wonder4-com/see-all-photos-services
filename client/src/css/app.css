@@ -6,7 +6,8 @@
     align-items: right;
     /* background-color: lightslategrey; */
     overflow: hidden;
-    
+    position: absolute;
+    top: 10%;
   }
   
   /* show or hide the main display/ carousel is in style.css ?*/
